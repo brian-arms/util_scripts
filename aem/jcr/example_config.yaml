@@ -1,0 +1,25 @@
+-
+  hostname: 'author1.example.com'
+  port: '4502'
+  user: 'admin'
+  password: 'admin'
+  nodes:
+    - '/content/path/to/node1'
+    - '/content/path/to/node2'
+    - '/apps/path/to/another/node'
+- &publish_defaults
+  hostname: 'publish1.example.com'
+  port: '4503'
+  user: 'admin'
+  password: 'admin'
+  nodes:
+    - '/content/path/to/node1'
+    - '/content/path/to/different/node'
+    - '/apps/yet/another/node/path'
+-
+  <<: *publish_defaults
+  hostname: 'publish2.example.com'
+-
+  <<: *publish_defaults
+  hostname: 'publish3.example.com'
+  password: 'different_password'
